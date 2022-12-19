@@ -9,7 +9,7 @@ Draw with one finger/stylus and pan & zoom with two.
 Docker Run
 
 ```shell
-docker run -d --name=zeronote -p 80:80 ghcr.io/cgbassplayer/zeronote:latest
+docker run -d --name=zeronote -p 80:80 ghcr.io/cgbassplayer/zeronote-docker/zeronote:latest
 ```
 
 Docker Compose
@@ -19,7 +19,7 @@ version: '3.9'
 
 services:
   zeronote:
-    image: ghcr.io/cgbassplayer/zeronote:latest
+    image: ghcr.io/cgbassplayer/zeronote-docker/zeronote:latest
     container_name: zeronote
     restart: unless-stopped
     ports:
