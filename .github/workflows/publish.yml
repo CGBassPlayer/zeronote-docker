@@ -25,7 +25,7 @@ jobs:
           tags: |
             latest
             0.1.0
-          dockerfile: docker/Dockerfile.0.1.0
+          dockerfile: docker/0.1.0/Dockerfile
           image_name: zeronote
           build_args: |
             BUILD_DATE=${{ steps.date.output.now }}
