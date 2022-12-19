@@ -1,0 +1,5 @@
+.git*
+README.md
+screenshot.jpg
+runlocal.sh
+Makefile

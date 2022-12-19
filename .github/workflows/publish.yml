@@ -1,0 +1,35 @@
+name: Publish Image on GitHub Container Registry
+
+on:
+  push:
+    branches:
+      - "main"
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout Repository
+
+      # - uses: pmorelli92/github-container-registry-build-push@2.0.0
+      #   name: Build and Publish lastest Image
+      #   with:
+      #     github-push-secret: ${{secrets.GITHUB_TOKEN}}
+      #     docker-image-name: zeronote
+
+      # https://github.com/marketplace/actions/docker-package-registry
+      - name: Docker Package Registry
+        uses: craftech-io/package-action@v3.1.0
+        with:
+          access_token: ${{ secrets.GITHUB_TOKEN }}
+          tags: |
+            latest
+            0.1.0
+          dockerfile: docker/Dockerfile.0.1.0
+          image_name: zeronote
+          build_args: |
+            BUILD_DATE=${{ date +%F }}
+            ZERONOTE_VERSION=0.0.1
+          username: CGBassPlayer
