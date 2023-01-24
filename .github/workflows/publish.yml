@@ -24,8 +24,8 @@ jobs:
           access_token: ${{ secrets.GITHUB_TOKEN }}
           tags: |
             latest
-            0.1.0
-          dockerfile: docker/0.1.0/Dockerfile
+            0.1.1
+          dockerfile: docker/0.1.1/Dockerfile
           image_name: zeronote
           build_args: |
             BUILD_DATE=${{ steps.date.output.now }}
